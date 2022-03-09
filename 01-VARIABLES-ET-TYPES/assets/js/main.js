@@ -19,7 +19,7 @@ let maVariable = 25.1; // Une decalaration suivie d'une assignation ou d'une aff
 console.log(maVariable);//25.1
 console.log(typeof maVariable);//number ==> number est un type nombre en JS
 
-// let maVariable = "Joachim";// interdit ==> On ne peut declarer la meme variable de meme nom plusieurs fois avec le let
+let maVariable = "Joachim";// interdit ==> On ne peut declarer la meme variable de meme nom plusieurs fois avec le let
 maVariable = "Joachim"; // assignation d'une nouvelle valeur autorisée en JS car "variable"
 console.log(maVariable);//Joachim
 console.log(typeof maVariable);// string ==> string est le type chaine de cararcteres en JS
@@ -45,7 +45,7 @@ console.log(nom);
 console.log(estMajeur);
 
 // Les mots cles ou reservés en JS ne peuvent etre utilisés comme identifiant
-// let false; ==> interdit en JS, false est un mot cle du JS
+let false; // ==> interdit en JS, false est un mot cle du JS
 
 // let 5prenom = "dwwm-1b"; ==> un identificateur ne peut commencer par un nombre
 let prenom5 = "dwwm-1b";
@@ -68,7 +68,7 @@ let nomPrenom = "Joachim Zadi";
 const NOM_PRENOM = "Thierry Borris";
 
 // Une constante ne peut etre modifiée. Elle accepte une une & une seule assignation
-// NOM_PRENOM = "Thierry Borris"; // ==> Interdit en JS
+NOM_PRENOM = "Thierry Borris"; // ==> Interdit en JS
 
 // UTILISATION DES VARIABLES & CONSTANTES
 // ======================================
