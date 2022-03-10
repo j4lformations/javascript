@@ -18,7 +18,7 @@ if (isNaN(poids) || isNaN(taille)) {
     // On calcule l'IMC
     let imc = poids / Math.pow(taille, 2);
 
-    console.log(`imc = ${imc}`);
+    console.log(`imc = ${imc.toFixed(2)}`);
 
     if (imc < 18.5) {
         console.log(`Insuffisance pondérale`);
