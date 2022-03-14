@@ -6,6 +6,7 @@
 
 let plusGrand = -Infinity;
 let chaine = '';
+let rang = -1;
 for (let i = 1; i < 11; i++) {
     let saisie = Number(prompt(`Saisie N°${i}`));
     if (isNaN(saisie)) {
@@ -17,11 +18,13 @@ for (let i = 1; i < 11; i++) {
         chaine += `${saisie} `;
         if (saisie > plusGrand) {
             plusGrand = saisie;
+            rang = i;
         }
     }
 }
 console.log(chaine);
 console.log(`plusGrand = ${plusGrand}`);
+console.log(`rang = ${rang}`);
 
 
 // 2. Lire 10 nombres et trouver le plus petit et son rang.
