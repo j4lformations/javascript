@@ -125,3 +125,8 @@ const rire = () => {
 }
 
 definieDeuxFois(rire);
+
+// Une fonction de rappel ou callback est une fonction passée dans une autre fonction comme argument,
+// qui est ensuite invoquée à l'intérieur de la fonction externe.
+
+definieDeuxFois(rire);// La fonction rire ici est une fonction de rappel.
