@@ -7,7 +7,7 @@
 console.log(2 + 3);
 
 // Pour executer le JS dans la console, on utiliseras nodejs
-console.log("Mon premier fichier JavaScript depuis le fichier main.js");
+console.log("Mon premier fichier JavaScript depuis le fichier main_object.js");
 
 /*
  * CECI EST COMMENTAIRE

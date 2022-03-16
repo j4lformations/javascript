@@ -23,20 +23,20 @@ const isEven = i => {
 // testFonction(isMultiple);
 // testFonction(isEven);
 
-// function isPremier(n) {
-//     let resultat = true;
-//     if (n < 2) {
-//         resultat = false;
-//     } else {
-//         for (let i = 2; i <= Math.sqrt(n); i++) {
-//             if (isMultiple(n, i)) {
-//                 resultat = false;
-//                 break;
-//             }
-//         }
-//     }
-//     return resultat;
-// }
-//
-// let n = Number(prompt("Entrez un entier positif "));
-// console.log(isPremier(n));
+function isPremier(n) {
+    let resultat = true;
+    if (n < 2) {
+        resultat = false;
+    } else {
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (isMultiple(n, i)) {
+                resultat = false;
+                break;
+            }
+        }
+    }
+    return resultat;
+}
+
+let n = Number(prompt("Entrez un entier positif "));
+console.log(isPremier(n));
