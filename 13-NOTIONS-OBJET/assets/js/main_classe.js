@@ -1,29 +1,29 @@
 // Crée par Joachim Zadi le 16/03/2022 à 14:52. Version 1.0
 // ========================================================
 
-class Personne {
-    // Les proprietres
-    prenom;
-    age;
-    conjoint;
+// class Personne {
+//     // Les proprietres
+//     prenom;
+//     age;
+//     conjoint;
+//
+//     constructor(prenom, age) {
+//     }
+// }
 
-    constructor(prenom, age) {
-    }
-}
-
-let personne = new Personne();
-
-personne.age = 53;
-personne.prenom = "Joachim";
-personne.conjoint = null;
-
-console.log(personne);
-console.log(typeof personne);
-console.log(personne.constructor.name);
-
-let tab = [1, 2];
-console.log(typeof tab);
-console.log(tab.constructor.name);
+// let personne = new Personne();
+//
+// personne.age = 53;
+// personne.prenom = "Joachim";
+// personne.conjoint = null;
+//
+// console.log(personne);
+// console.log(typeof personne);
+// console.log(personne.constructor.name);
+//
+// let tab = [1, 2];
+// console.log(typeof tab);
+// console.log(tab.constructor.name);
 
 //------------------------------------
 
@@ -62,7 +62,7 @@ class Person {
     /**
      * Permet de donner la description textuelle d'un objet de type Person
      */
-    affichage() {
+    toString() {
         let affiche = `${this.prenom}, ${this.age} ans\n`;
         if (this.conjoint !== null) {
             affiche += `a pour conjoint ${this.conjoint.prenom}, ${this.conjoint.age} ans\n`;
@@ -82,9 +82,9 @@ console.log(Person.nbPerson);
 // On effectue un mariage
 manou.seMarier(brigitte);
 
-console.log(manou.affichage());
+console.log(manou.toString());
 console.log('\n');
-console.log(brigitte.affichage());
+console.log(brigitte.toString());
 
 // HERITAGE
 class Stagiaire extends Person {
@@ -95,8 +95,8 @@ class Stagiaire extends Person {
     }
 
     // Methode polymorphe
-    affichage() {
-        return super.affichage() + `suit la formation ${this.formation}`;
+    toString() {
+        return super.toString() + `suit la formation ${this.formation}`;
     }
 }
 
@@ -105,11 +105,11 @@ console.log(fabien);
 console.log(fabien.constructor.name);
 console.log(manou.constructor.name);
 
-console.log(fabien.affichage());
+console.log(fabien.toString());
 
 fabien.seMarier(brigitte);
-console.log(fabien.affichage());
+console.log(fabien.toString());
 
 let fanny = new Person("Fanny", 25);
 fabien.seMarier(fanny);
-console.log(fabien.affichage());
+console.log(fabien.toString());
