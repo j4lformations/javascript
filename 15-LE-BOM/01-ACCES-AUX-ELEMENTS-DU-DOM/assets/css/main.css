@@ -1,0 +1,12 @@
+div, p, fieldset {
+    padding: 5px;
+    margin: 5px;
+}
+
+div {
+    border: 1px solid #333;
+}
+
+.paraBold {
+    font-weight: bold;
+}
