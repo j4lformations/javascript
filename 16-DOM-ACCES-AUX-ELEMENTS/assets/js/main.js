@@ -1,6 +1,10 @@
 // Crée par Joachim Zadi le 17/03/2022 à 11:32. Version 1.0
 // ========================================================
 
+// =====================================
+// = RECHERCHER UN ELEMENT DANS LE DOM =
+// =====================================
+
 // Recherche d'un à partir de son nom de tag
 // *****************************************
 
@@ -70,5 +74,46 @@ console.log(document.body);     // ==> HTMLBodyElement
 console.log(document.forms);    // ==> HTMLCollection   ==> un tableau HTMLCollection de tous les éléments de balise form trouvés dans la page
 console.log(document.scripts);  // ==> HTMLCollection   ==> un tableau HTMLCollection de tous les éléments de balise script trouvés dans la page
 
+// ================================
+// = ACCEDER AUX ELEMENTS ENFANTS =
+// ================================
 
+// Un élément possède la propriété childNodes, qui contient
+// un tableau NodeList de tous les éléments enfants directs.
 
+parSelecteur = document.querySelector('div#bloc');
+console.log(parSelecteur);
+
+let eltEnfants = parSelecteur.childNodes;
+console.log(eltEnfants);
+
+// Affiche le premier enfant
+// let premierEnfant = parSelecteur.firstChild;     //  ==>  Affiche les #text
+let premierEnfant = parSelecteur.firstElementChild;
+console.log(premierEnfant);
+
+// Affiche le dernier enfants
+// let dernierEnfant = parSelecteur.lastChild;      //  ==> Affiche les #text
+let dernierEnfant = parSelecteur.lastElementChild;
+console.log(dernierEnfant);
+
+// ===============================
+// = ACCEDER AUX ELEMENTS FRERES =
+// ===============================
+
+// Les propriétés nextSibling et previousSibling pointent vers
+// l’élément précédent ou suivant de même niveau hiérarchique.
+// L’utilité de ces propriétés est claire quand on sait que le
+// mot sibling signifie « enfant de mêmes parents ».
+
+// Préférez les propriétés nextElementSibling et previousElementSibling,
+// qui pointent correctement vers les éléments HTML en ignorant les informations inutiles.
+
+let frereSuivant = parSelecteur.nextElementSibling;
+console.log(frereSuivant);
+
+let frerePrecedent = parSelecteur.previousElementSibling;
+console.log(frerePrecedent);
+
+let parent = parSelecteur.parentElement;
+console.log(parent);
