@@ -18,7 +18,7 @@ export class PokemonAquatique extends Pokemon {
 
         // Une classe abstraite ne peut pas être instanciée !!!
         if (this.constructor === PokemonAquatique) {
-            throw new Error("Pour Info: L'instance de la classe PokemonTerrestre ne peut pas être instanciée");
+            throw new Error("Pour Info: L'instance de la classe PokemonAquatique ne peut pas être instanciée");
         } else {
             this.#nbNageoires = nbNageoires;
         }
