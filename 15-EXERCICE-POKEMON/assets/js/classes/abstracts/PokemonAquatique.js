@@ -29,7 +29,7 @@ export class PokemonAquatique extends Pokemon {
     }
 
     toString() {
-        let affichage = `J'ai ${this.nbNageoires} nageoires\n\n`;
+        let affichage = `J'ai ${this.nbNageoires} nageoires.\n\n`;
         return super.toString() + affichage;
     }
 }

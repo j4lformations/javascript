@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    margin-top: 2.5rem;
+}
+div, p, fieldset {
+    padding: 5px;
+    margin: 5px;
+}
+
+div {
+    border: 1px solid #333;
+}
+
+#container,#dernier {
+    width: 30%;
+    margin: 1rem auto;
+}
+
+.paraBold {
+    font-weight: bold;
+}
