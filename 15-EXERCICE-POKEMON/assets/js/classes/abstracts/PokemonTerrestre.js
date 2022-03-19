@@ -23,6 +23,7 @@ export class PokemonTerrestre extends Pokemon {
         } else {
             this.#nbPattes = nbPattes;
             this.#taille = taille;
+            super.vitesse = this.nbPattes * this.taille * 3;
         }
     }
 
@@ -35,7 +36,6 @@ export class PokemonTerrestre extends Pokemon {
     }
 
     get vitesse() {
-        super.vitesse = this.nbPattes * this.taille * 3;
         return super.vitesse.toFixed(2);
     }
 

@@ -178,3 +178,53 @@ console.log(monTitre.classList);
 console.log(monTitre.className);
 console.log(document.querySelector('p:nth-child(4)').classList);
 console.log(document.querySelector('p:nth-child(4)').className);
+
+// CRÉER DE NOUVEAUX ÉLÉMENTS
+// --------------------------
+
+// La méthode createElement()
+// **************************
+/*
+    Le JavaScript autorise la création et l’ajout d’éléments HTML par programmation.
+    La première étape est de créer un nouvel HTMLElement avec la méthode createElement() de document
+    document.createElement(String typeElement) ==> HTMLElement
+
+    Une fois l’élément créé, il faut y ajouter les attributs avec la fonction setAttribute().
+*/
+
+let notification = document.createElement("div");
+notification.setAttribute("id", "notification");
+notification.innerHTML = "Voici notre bloc de notification";
+notification.className = "fixed top right";
+console.log(notification);
+
+/*
+    Il arrive qu’on souhaite dupliquer des éléments du document HTML déjà existants.
+    Dans ce cas, la méthode cloneElement() est particulièrement adaptée
+*/
+
+// Ajouter des éléments dans le document
+// *************************************
+/*
+    À ce moment, notre div, qu’il soit issu d’un clonage ou d’une création directe, n’est pas encore sur le document.
+    Il n’est qu’un objet JavaScript en mémoire.
+    La seconde étape est donc de l’ajouter au bon endroit du DOM.
+
+    Il existe deux méthodes d’ajout d’un élément enfant à un élément parent :
+        ==> La méthode appendChild() ajoute l’élément enfant à la fin d’un élément parent :
+            parent.appendChild(HTMLElement enfant)
+        ==> La méthode insertBefore() autorise l’insertion de enfant dans l’élément parent, juste avant l’élément position :
+            parent.insertBefore(HTMLElement enfant, HTMLElement position)
+*/
+document.body.appendChild(notification);
+
+// Supprimer un élément HTML
+// *************************
+/*
+    La méthode removeChild() retire du DOM l’élément enfant de son élément parent
+        ==> parent.childnodes(HTMLElement enfant)
+*/
+
+setTimeout(function () {
+    document.body.removeChild(document.getElementById('notification'))
+}, 5000);

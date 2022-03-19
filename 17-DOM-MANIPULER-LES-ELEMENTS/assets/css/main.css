@@ -1,7 +1,8 @@
-h1{
+h1 {
     text-align: center;
     margin-top: 2.5rem;
 }
+
 div, p, fieldset {
     padding: 5px;
     margin: 5px;
@@ -11,11 +12,31 @@ div {
     border: 1px solid #333;
 }
 
-#container,#dernier {
+#container, #dernier {
     width: 30%;
     margin: 1rem auto;
 }
 
 .paraBold {
     font-weight: bold;
+}
+
+div#notification {
+    border: 1px solid #999;
+    background: #ccc;
+    box-shadow: 3px 3px 3px #999;
+    font-weight: bold;
+    width: 120px;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.top {
+    top: 10px;
+}
+
+.right {
+    right: 10px;
 }

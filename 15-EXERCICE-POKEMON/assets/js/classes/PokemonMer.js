@@ -12,10 +12,10 @@ export class PokemonMer extends PokemonAquatique {
 
     constructor(nom, poids, nbNageoires) {
         super(nom, poids, nbNageoires);
+        super.vitesse = this.poids / 25 * this.nbNageoires;
     }
 
     get vitesse() {
-        super.vitesse = this.poids / 25 * this.nbNageoires;
         return super.vitesse.toFixed(2);
     }
 }

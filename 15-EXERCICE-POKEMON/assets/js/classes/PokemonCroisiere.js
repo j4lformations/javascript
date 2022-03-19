@@ -12,10 +12,10 @@ export class PokemonCroisiere extends PokemonAquatique {
 
     constructor(nom, poids, nbNageoires) {
         super(nom, poids, nbNageoires);
+        super.vitesse = (this.poids / 25 * this.nbNageoires) / 2;
     }
 
     get vitesse() {
-        super.vitesse = (this.poids / 25 * this.nbNageoires) / 2;
         return super.vitesse.toFixed(2);
     }
 }
