@@ -67,9 +67,9 @@ console.log(saisie.value);
 // *******
 
 //On ecrit la fonction de verifiaction
-function verifier(nombre) {
+const verifier = nombre => {
 
-    //On cree l'element qui va encapsuler notre message
+    //On cree l'élément qui va encapsuler notre message
     let instruction = document.createElement('p');
 
     if (nombre < alea) {
