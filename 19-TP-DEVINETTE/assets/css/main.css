@@ -1,0 +1,17 @@
+.largeur {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15rem;
+    background: #e8eaf6;
+}
+
+#formulaire {
+    padding: 3rem 2rem;
+}
+
+#instructions{
+    width: 50%;
+    margin: 3px auto;
+    border-radius: 0;
+}

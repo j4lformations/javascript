@@ -1,73 +1,86 @@
 // Crée par Joachim Zadi le 22/03/2022 à 14:16. Version 1.0
 // ========================================================
 
-// EXEMPLE DE CANEVAS DE TRAVAIL
-
 // ETAPE 1
-// =======
+// *******
 
-// On selectionne eles information utilisateur
-let formulaire = document.getElementById('devineForm');
+//On selectionne les elements de la page
+let formulaire = document.getElementById('formulaire');
 let saisie = document.getElementById('saisie');
 let erreur = document.getElementById('erreur');
 
 // ETAPE 2
-// =======
+// *******
 
-// Le systeme genere un nombre aleatoire compris
-let alea = Math.floor((Math.random() * 10)) + 1;
-let nbCoup;
+// Le systeme genere un nombre aleatoire (1 <-> 10)
+let alea = Math.floor(Math.random() * 10) + 1;
+let nbCoup = 0;
+let nombreChoisi;
 
 // ETAPE 3
-// =======
-
-// On recupere la saisie user pour verification
-saisie.addEventListener('keyup', function (e) {
-
-    let maSaisie = this.value.trim();
-
-    if (maSaisie === '' || isNaN(maSaisie)) {
-
-        erreur.style.display = 'block';
-        erreur.style.color = 'red';
-        erreur.style.fontSize = '.7rem';
-        erreur.style.fontStyle = 'italic';
-        erreur.innerText = 'Un nombre est attendu en saisie';
-
-        // On peut utiliser les noms de classes
-        // erreur.className = 'erreur-saisie'
+// *******
+//On verifie que la saisie est un nombre
+saisie.addEventListener('keyup', () => {
+    if (isNaN(saisie.value)) {
+        //On affiche le message d'erreur
+        erreur.style.display = 'inline';
     } else {
+        //On masque le message d'erreur
         erreur.style.display = 'none';
     }
-
-    // if (parseInt(maSaisie) < 1 || parseInt(maSaisie) > 10) {
-    //     erreur.style.display = 'block';
-    //     erreur.innerText = 'entier compris entre 1 & 10 est attendu en saisie';
-    // }
 });
 
 // ETAPE 4
-// ======
+// *******
 
-// Validation du formulaire
-
+//On valide le formulaire
 formulaire.addEventListener('submit', function (e) {
+    //On desasctive le comportement par defaut du navigateur
     e.preventDefault();
 
-    nbCoup++;
-
-    if (saisie.value < alea) {
-        let pAffiche = document.getElementById('instructions');
-        pAffiche.innerText = `Le nombre est plus grand`;
-    } else if (saisie.value > alea) {
-        let pAffiche = document.getElementById('instructions');
-        pAffiche.innerText = `Le nombre est plus petit`;
+    //On verifie les infos saisie par l'utilisateur
+    if (saisie.value.trim() === '' || isNaN(saisie.value)) {
+        //On met une couleur de bordure rouge
+        saisie.style.borderColor = 'red';
     } else {
-        let pAffiche = document.getElementById('instructions');
-        pAffiche.innerText = `Bravo Le nombre à cherché etai ${alea}`;
+        //On increment le nombre de coup
+        nbCoup++;
+
+        //On met une couleur de bordure silver
+        saisie.style.borderColor = 'silver';
+
+        //On recupere la saisie de l'utilisateur
+        nombreChoisi = saisie.value;
+
+        //On reinitialise le champ de saisie
+        saisie.value = '';
+
+        //On appelle la fonction de verification
+        verifier(nombreChoisi);
     }
-})
+});
 
+console.log(alea);
+console.log(saisie.value);
 
+// ETAPE 5
+// *******
 
+//On ecrit la fonction de verifiaction
+function verifier(nombre) {
 
+    //On cree l'element qui va encapsuler notre message
+    let instruction = document.createElement('p');
+
+    if (nombre < alea) {
+        instruction.className = "alert alert-danger";
+        instruction.textContent = `Coup N°${nbCoup}  [${nombre}], c'est plus grand`;
+    } else if (nombre > alea) {
+        instruction.className = "alert alert-danger";
+        instruction.textContent = `Coup N°${nbCoup}  [${nombre}], c'est plus petit`;
+    } else {
+        instruction.className = "alert alert-success";
+        instruction.textContent = `Bravo le nombre à trouver etait ${alea}`;
+    }
+    document.getElementById('instructions').prepend(instruction);
+}
