@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>TP DEVINETTE</title>
+</head>
+<body>
+<div class="container bg-light">
+    <form id="devineForm" class="py-5">
+        <div class="input-group mb-3 has-validation">
+            <label>
+                <input id="saisie" type="text" class="form-control" placeholder="Saisir un nombre compris entre 1 & 10">
+            </label>
+            <button class="btn btn-primary" type="submit">Valider</button>
+        </div>
+        <div id="erreur" class="erreur-saisie"></div>
+    </form>
+    <p id="instructions"></p>
+</div>
+
+<script src="assets/bs/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
