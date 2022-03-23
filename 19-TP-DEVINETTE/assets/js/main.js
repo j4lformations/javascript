@@ -4,29 +4,54 @@
 // ETAPE 1
 // *******
 
-//On selectionne les elements de la page
-let formulaire = document.getElementById('formulaire');
+// On sélectionne les éléments de la page
+let formJeux = document.getElementById('formJeux');
 let saisie = document.getElementById('saisie');
 let erreur = document.getElementById('erreur');
+let boutonValidation = document.getElementById('bouton');
 
 // ETAPE 2
 // *******
 
-// Le systeme genere un nombre aleatoire (1 <-> 10)
+// Le systeme génère un nombre aléatoire compris entre [1 & 10]
 let alea = Math.floor(Math.random() * 10) + 1;
-let nbCoup = 0;
+
+// La variable representatnt le nombre de tentatives
+let tentatives = 0;
+
+// La variable representant le choix de l'utilisateur
 let nombreChoisi;
 
 // ETAPE 3
 // *******
 //On verifie que la saisie est un nombre
 saisie.addEventListener('keyup', () => {
-    if (isNaN(saisie.value)) {
-        //On affiche le message d'erreur
+
+    let saisieEnCours = saisie.value.trim();
+    console.log(saisieEnCours);
+
+    // Si la saisie n'est pas un nombre
+    if ((saisieEnCours == '' || isNaN(saisieEnCours)) || (saisieEnCours < 1 || saisieEnCours > 10)) {
+        // On affiche le msg d'erreur
         erreur.style.display = 'inline';
+
+        // On genere le message à afficher
+        erreur.innerText = (saisieEnCours == '' || isNaN(saisieEnCours)) ? 'Merci de saisir un nombre entier' : 'Le dombre doit etre compris entre 1 et 10';
+
+        // On met la bordure du champ de saisie en rouge
+        saisie.className = 'form-control is-invalid';
+
+        // On desactive le bouton de validation
+        boutonValidation.disabled = true;
     } else {
-        //On masque le message d'erreur
+        // On retire la bordure rouge
+        saisie.className = 'form-control';
+
+        // On masque le message d'erreur
         erreur.style.display = 'none';
+
+        // On active le bouton de validation
+        boutonValidation.disabled = false;
     }
 });
 
@@ -34,34 +59,26 @@ saisie.addEventListener('keyup', () => {
 // *******
 
 //On valide le formulaire
-formulaire.addEventListener('submit', function (e) {
+formJeux.addEventListener('submit', function (e) {
     //On desasctive le comportement par defaut du navigateur
     e.preventDefault();
 
-    //On verifie les infos saisie par l'utilisateur
-    if (saisie.value.trim() === '' || isNaN(saisie.value)) {
-        //On met une couleur de bordure rouge
-        saisie.style.borderColor = 'red';
-    } else {
-        //On increment le nombre de coup
-        nbCoup++;
+    //On increment le nombre de coup
+    tentatives++;
 
-        //On met une couleur de bordure silver
-        saisie.style.borderColor = 'silver';
+    //On recupere la saisie de l'utilisateur
+    nombreChoisi = saisie.value;
 
-        //On recupere la saisie de l'utilisateur
-        nombreChoisi = saisie.value;
+    //On reinitialise le champ de saisie
+    saisie.value = '';
 
-        //On reinitialise le champ de saisie
-        saisie.value = '';
+    //On appelle la fonction de verification
+    verifier(nombreChoisi);
 
-        //On appelle la fonction de verification
-        verifier(nombreChoisi);
-    }
+    saisie.className = 'form-control';
+    boutonValidation.disabled = false;
 });
 
-console.log(alea);
-console.log(saisie.value);
 
 // ETAPE 5
 // *******
@@ -70,17 +87,17 @@ console.log(saisie.value);
 const verifier = nombre => {
 
     //On cree l'élément qui va encapsuler notre message
-    let instruction = document.createElement('p');
+    let reponse = document.createElement('p');
 
     if (nombre < alea) {
-        instruction.className = "alert alert-danger";
-        instruction.textContent = `Coup N°${nbCoup}  [${nombre}], c'est plus grand`;
+        reponse.className = "reponse alert alert-danger";
+        reponse.textContent = `Coup N°${tentatives}  [${nombre}], le nombre cherché est plus grand`;
     } else if (nombre > alea) {
-        instruction.className = "alert alert-danger";
-        instruction.textContent = `Coup N°${nbCoup}  [${nombre}], c'est plus petit`;
+        reponse.className = "reponse alert alert-danger";
+        reponse.textContent = `Coup N°${tentatives}  [${nombre}], le nombre cherché est plus petit`;
     } else {
-        instruction.className = "alert alert-success";
-        instruction.textContent = `Bravo le nombre à trouver etait ${alea}`;
+        reponse.className = "reponse alert alert-success";
+        reponse.textContent = `Bravo le nombre à trouver etait ${alea}. Vous l'avez trouver en ${tentatives}`;
     }
-    document.getElementById('instructions').prepend(instruction);
+    document.getElementById('reponse').prepend(reponse);
 }

@@ -12,19 +12,18 @@
     <div class="jeux">
         <div class="titre text-primary">tirage aleatoire</div>
         <form id="formJeux" class="row g-3">
-            <div class="col-md-8">
-                <input id="saisie" type="text" class="form-control is-invalid"/>
+            <div class="col-md-8 mb-4">
+                <input id="saisie" type="text" class="form-control" placeholder="Saisr un nom entier compris entre [1 & 10]"/>
                 <div id="erreur" class="erreur invalid-feedback">
                     message d'erreur
                 </div>
             </div>
-
             <div class="col-4">
-                <button class="btn btn-primary" type="submit">Valider</button>
+                <button id="bouton" class="btn btn-primary" type="submit">Valider</button>
             </div>
 
         </form>
-        <p id="reponse" class="reponse alert alert-success">ici les reponses</p>
+        <p id="reponse"></p>
     </div>
 </div>
 

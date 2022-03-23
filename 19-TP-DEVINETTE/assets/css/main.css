@@ -1,52 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap");
+
 body {
-  font-family: "Cormorant Garamond", serif;
+    font-family: "Cormorant Garamond", serif;
 }
 
 .jeux {
-  margin: 10rem auto;
-  width: 50%;
-}
-@media screen and (max-width: 768px) {
-  .jeux {
-    width: 100%;
-  }
-}
-.jeux .titre {
-  font-family: "Abril Fatface", cursive;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.5rem;
-}
-.jeux form {
-  margin: 1.5rem auto;
-  background-color: rgba(2, 136, 209, 0.1);
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.5rem;
-}
-.jeux form .form-control {
-  border-radius: 0;
-  font-size: 1.2rem;
-}
-.jeux form .erreur {
-  font-style: italic;
-}
-.jeux form .btn {
-  border-radius: 0;
-  font-size: 1.2rem;
-  font-family: "Abril Fatface", cursive;
-  width: 100%;
-}
-@media screen and (max-width: 768px) {
-  .jeux form .btn {
-    font-size: 0.7rem;
-  }
-}
-.jeux .reponse {
-  text-align: center;
-  border-radius: 0;
-  font-size: 1.2rem;
+    margin: 10rem auto;
+    width: 60%;
 }
 
-/*# sourceMappingURL=main.css.map */
+@media screen and (max-width: 768px) {
+    .jeux {
+        width: 100%;
+    }
+}
+
+.jeux .titre {
+    font-family: "Abril Fatface", cursive;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.jeux form {
+    margin: 1.5rem auto;
+    background-color: rgba(2, 136, 209, 0.1);
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.jeux form .form-control {
+    border-radius: 0;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.jeux form .erreur {
+    font-style: italic;
+}
+
+.jeux form .btn {
+    border-radius: 0;
+    font-size: 1.2rem;
+    font-family: "Abril Fatface", cursive;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .jeux form .btn {
+        font-size: 0.7rem;
+    }
+}
+
+.jeux .reponse {
+    text-align: center;
+    border-radius: 0;
+    font-size: 1.2rem;
+}
+
