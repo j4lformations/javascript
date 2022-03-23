@@ -54,11 +54,6 @@ saisie.addEventListener('keyup', () => {
     }
 });
 
-// Fonction permettant de verifier si la saisie user est valide
-const isInValideSaisie = (chaine) => {
-    chaine = chaine.trim();
-    return (chaine.length === 0 || isNaN(chaine)) || (chaine < 1 || chaine > 10);
-}
 
 // ETAPE 4
 // *******
@@ -87,11 +82,21 @@ formJeux.addEventListener('submit', function (e) {
 });
 
 
-// ETAPE 5
-// *******
+/**
+ * Fonction permettant de verifier si la saisie user est invalide
+ * @param chaine
+ * @returns {boolean|boolean} true si la saisie est invalide, sino false
+ */
+const isInValideSaisie = (chaine) => {
+    chaine = chaine.trim();
+    return (chaine.length === 0 || isNaN(chaine)) || (chaine < 1 || chaine > 10);
+}
 
-//On ecrit la fonction de verifiaction
-const verifier = nombre => {
+/**
+ * Permettant de generer le resultat de la devinette
+ * @param nombre
+ */
+const verifier = (nombre) => {
 
     //On cree l'élément qui va encapsuler notre message
     let reponse = document.createElement('p');
