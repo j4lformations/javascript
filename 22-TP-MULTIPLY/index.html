@@ -3,11 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
-    <title>LISTE DE TACHES</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <title>MULTIPLY - GAME</title>
 </head>
 <body>
 
-<script src="assets/js/main.js"></script>
+<div class="container">
+    <header class="header">page de jeux</header>
+    <main class="main">
+        <p class="main__titre">voici votre défi du moment</p>
+        <p class="main__operation">
+            <span id="operandeGauche">25</span> x <span id="operandeDroite">52</span>
+        </p>
+        <form name="formReponse" class="main__reponse">
+            <div>
+                <label>
+                    <input type="text" id="saisie" class="main__form-control" placeholder="Saisir ici votre reponse"
+                           required autocomplete="off">
+                </label>
+            </div>
+            <div id="erreur" class="main__erreur" style="display: none"></div>
+            <div>
+                <button id="btnValider" class="main__btn-valider" type="submit">Valider</button>
+            </div>
+        </form>
+        <p class="main__msg"></p>
+        <table id="historique" class="main__historique">
+            <thead class="main__historique-titre">
+            <tr>
+                <th>id</th>
+                <th>opération</th>
+                <th>reponse</th>
+                <th>correct ?</th>
+            </tr>
+            </thead>
+            <tbody id="tentatives"></tbody>
+        </table>
+    </main>
+</div>
+
+<script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
