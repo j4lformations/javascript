@@ -13,7 +13,15 @@
     <main class="main">
         <p class="main__titre">voici votre défi du moment</p>
         <p class="main__operation">
-            <span id="operandeGauche">25</span> x <span id="operandeDroite">52</span>
+            <span id="operandeGauche">25</span>
+                            <select name="operateur" id="operateur" style="text-align:center;">
+                                <option value="*">x</option>
+                                <option value="/">/</option>
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value="%">%</option>
+                            </select>
+            <span id="operandeDroite">52</span>
         </p>
         <form name="formReponse" class="main__reponse">
             <div>
