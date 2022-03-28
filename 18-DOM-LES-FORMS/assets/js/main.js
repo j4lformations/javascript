@@ -10,26 +10,25 @@
 // console.log(document.forms[0]);
 // console.log(document.forms['appForm']);
 
-let monForm = document.appForm;
-let saisie = document.getElementById('saisie');
-// console.log(saisie.value);
-
-
-monForm.addEventListener('submit', soumission);
-
-function soumission(e) {
-    // let affichage = document.getElementById('affichage');
-    // affichage.innerText = `Vous avez saisie ${saisie.value}`;
-
-    if (document.getElementById('affichage')) {
-        document.body.removeChild(document.getElementById('affichage'));
-    }
-
-    let divAffichage = document.createElement('div');
-    divAffichage.setAttribute('id', 'affichage');
-    divAffichage.innerText = `Vous avez saisie ${saisie.value}`;
-    document.body.appendChild(divAffichage);
-
-    e.preventDefault();
-}
-
+// let monForm = document.appForm;
+// let saisie = document.getElementById('saisie');
+// // console.log(saisie.value);
+//
+//
+// monForm.addEventListener('submit', soumission);
+//
+// function soumission(e) {
+//     // let affichage = document.getElementById('affichage');
+//     // affichage.innerText = `Vous avez saisie ${saisie.value}`;
+//
+//     if (document.getElementById('affichage')) {
+//         document.body.removeChild(document.getElementById('affichage'));
+//     }
+//
+//     let divAffichage = document.createElement('div');
+//     divAffichage.setAttribute('id', 'affichage');
+//     divAffichage.innerText = `Vous avez saisie ${saisie.value}`;
+//     document.body.appendChild(divAffichage);
+//
+//     // e.preventDefault();
+// }
