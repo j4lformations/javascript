@@ -1,0 +1,60 @@
+
+div {
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+div.inline {
+    display: inline-block;
+    border-radius: 4px;
+}
+
+p {
+    padding: 5px;
+    margin: 6px;
+}
+
+.bord {
+    border: 1px solid #999;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.fluo {
+    background-color: #ff0;
+    font-weight: bold;
+}
+
+.shadow {
+    box-shadow: 1px 1px 5px #000;
+    border: 2px solid #000;
+    padding: 4px;
+}
+
+.over {
+    box-shadow: 1px 1px 5px #000;
+    border: 2px solid #000;
+    padding: 4px;
+}
+
+div#bigDiv {
+    border: 2px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+    min-height: 100px;
+    background: #eee;
+}
+
+div#bitcoin {
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px auto;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    line-height: 50px;
+}
