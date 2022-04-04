@@ -27,9 +27,15 @@ $(document).ready(function (e) {
 
 
     // Gestion du fadeTo
-    $('#btn').click(function () {
-        $('#div1').fadeTo(2000, .2);
-        // $('#div2').fadeOut('slow');
-        // $('#div3').fadeOut(5000);
-    });
+    // $('#btn').click(function () {
+    //     $('#div1').fadeTo(2000, .2);
+    //     // $('#div2').fadeOut('slow');
+    //     // $('#div3').fadeOut(5000);
+    // });
+
+    function maFonction() {
+        return 'Bonjour tout le monde';
+    }
+
+    $('#saisie').val(maFonction());
 })
